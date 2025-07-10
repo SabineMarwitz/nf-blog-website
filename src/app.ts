@@ -42,14 +42,6 @@ app.get("/contact", (req: Request, res: Response) => {
   });
 });
 
-//app.get("/test", (req: Request, res: Response) => {
-//  console.log(blogData);
-//  res.render("_test.html", {
-//    title: "Blogs",
-// blogData,
-//});
-//});
-
 // start the web server
 app.listen(port, () => {
   console.log(`Example app listening on port${port}`);
