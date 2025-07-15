@@ -22,10 +22,12 @@ nunjucks.configure("src/templates", {
   express: app,
 });
 
-app.get("/", homeController);
-app.get("/about", aboutController);
-app.get("/contact", contactController);
-app.get("/post", blogController);
+/** Routes */
+app
+  .get("/", homeController)
+  .get("/about", aboutController)
+  .get("/contact", contactController)
+  .get("/post", blogController);
 // todo: use notFoundController
 
 // start the web server
