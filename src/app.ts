@@ -17,7 +17,7 @@ app.use(cors());
 
 app.use(express.static("public"));
 
-nunjucks.configure("src/templates", {
+nunjucks.configure("src/views", {
   autoescape: true,
   express: app,
 });

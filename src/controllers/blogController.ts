@@ -1,7 +1,7 @@
 import type { Request, Response } from "express";
 
 export const blogController = (req: Request, res: Response) => {
-  res.render("../templates/post.html", {
+  res.render("../views/post.html", {
     title: "Sample Post",
   });
 };
