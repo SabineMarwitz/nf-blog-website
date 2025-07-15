@@ -3,8 +3,13 @@ import "dotenv/config";
 import express from "express";
 import type { Request, Response } from "express";
 import nunjucks from "nunjucks";
-import blogData from "./data/blog.json";
+//import blogData from "./data/blog.json";
 import cors from "cors";
+import { homeController } from "./controllers/homeController";
+import { aboutController } from "./controllers/aboutController";
+import { contactController } from "./controllers/contactController";
+import { blogController } from "./controllers/blogController";
+
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -17,30 +22,11 @@ nunjucks.configure("src/templates", {
   express: app,
 });
 
-app.get("/", (req: Request, res: Response) => {
-  res.render("index.html", {
-    title: "Home",
-    blogData,
-  });
-});
-
-app.get("/about", (req: Request, res: Response) => {
-  res.render("about.html", {
-    title: "About",
-  });
-});
-
-app.get("/post", (req: Request, res: Response) => {
-  res.render("post.html", {
-    title: "Sample Post",
-  });
-});
-
-app.get("/contact", (req: Request, res: Response) => {
-  res.render("contact.html", {
-    title: "Contact",
-  });
-});
+app.get("/", homeController);
+app.get("/about", aboutController);
+app.get("/contact", contactController);
+app.get("/post", blogController);
+// todo: use notFoundController
 
 // start the web server
 app.listen(port, () => {
