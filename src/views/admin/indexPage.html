@@ -2,4 +2,9 @@
 
 {% block content %}
   <h1>Admin Dashboard</h1>
+  <div>
+    {% for b in blogEntries %}
+      <h4>{{ b.title }} by {{ b.author }}</h4>
+    {% endfor %}
+  </div>
 {% endblock %}
