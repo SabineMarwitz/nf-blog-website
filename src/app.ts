@@ -3,13 +3,9 @@ import "dotenv/config";
 import express from "express";
 import type { Request, Response } from "express";
 import nunjucks from "nunjucks";
-//import blogData from "./data/blog.json";
-import cors from "cors";
-import { homeController } from "./controllers/homeController";
-import { aboutController } from "./controllers/aboutController";
-import { contactController } from "./controllers/contactController";
-import { blogController } from "./controllers/blogController";
+import publicRoutes from "./routes/publicRoutes";
 
+import cors from "cors";
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -23,12 +19,8 @@ nunjucks.configure("src/views", {
 });
 
 /** Routes */
-app
-  .get("/", homeController)
-  .get("/about", aboutController)
-  .get("/contact", contactController)
-  .get("/post", blogController);
-// todo: use notFoundController
+app.use(publicRoutes);
+// todo: .use(notFoundController)
 
 // start the web server
 app.listen(port, () => {
