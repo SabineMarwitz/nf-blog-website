@@ -4,6 +4,7 @@ import express from "express";
 import type { Request, Response } from "express";
 import nunjucks from "nunjucks";
 import publicRoutes from "./routes/publicRoutes";
+import adminRoutes from "./routes/adminRoutes";
 
 import cors from "cors";
 const app = express();
@@ -19,7 +20,7 @@ nunjucks.configure("src/views", {
 });
 
 /** Routes */
-app.use(publicRoutes);
+app.use(publicRoutes).use("/admin", adminRoutes);
 // todo: .use(notFoundController)
 
 // start the web server
