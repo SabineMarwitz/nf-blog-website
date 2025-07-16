@@ -1,5 +1,5 @@
 import type { Request, Response } from "express";
-//import blogData from "../data/blog.json";
+import { BlogEntries } from "../types/models";
 import { getAllBlogEntries } from "../models/blogEntriesModel";
 
 /* todo add:

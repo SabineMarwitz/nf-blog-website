@@ -6,7 +6,6 @@ const FILE_PATH = path.join(__dirname, "..", "data", "blog.json");
 
 export async function getAllBlogEntries(): Promise<BlogEntries> {
   try {
-    console.log(FILE_PATH);
     const blogEntries = await readFile(FILE_PATH, { encoding: "utf-8" });
 
     if (blogEntries.length === 0) {
@@ -18,3 +17,5 @@ export async function getAllBlogEntries(): Promise<BlogEntries> {
     return [];
   }
 }
+
+// todo: add models to add, update, delete data
