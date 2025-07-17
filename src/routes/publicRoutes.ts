@@ -10,6 +10,7 @@ router
   .get("/", homeController)
   .get("/about", aboutController)
   .get("/contact", contactController)
+  // tbd: .get/entries/:slug, blogController);
   .get("/post", blogController);
 
 export default router;

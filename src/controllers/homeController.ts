@@ -1,20 +1,14 @@
 import type { Request, Response } from "express";
-import { BlogEntries } from "../types/models";
 import { getAllBlogEntries } from "../models/blogEntriesModel";
-
-/* todo add:
- * function transformBlogEntriesData () {
- * const titleAsSlug = slug(entry.title);
- * const datatime = dayjs.unix(entry,createdAt);
- * ...
- * */
+import { transformBlogEntriesData } from "../utils/transformBlogData";
+import { Console } from "console";
 
 export const homeController = async (req: Request, res: Response) => {
   const blogEntries = await getAllBlogEntries();
-  // const transformBlogEntriesData(...)
+  const entriesWithSlug = transformBlogEntriesData(blogEntries);
 
   res.render("../views/index.html", {
     title: "Home",
-    blogEntries,
+    entriesWithSlug,
   });
 };

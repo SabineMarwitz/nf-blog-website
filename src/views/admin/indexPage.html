@@ -3,8 +3,27 @@
 {% block content %}
   <h1>Admin Dashboard</h1>
   <div>
-    {% for b in blogEntries %}
-      <h4>{{ b.title }} by {{ b.author }}</h4>
-    {% endfor %}
+    <table>
+      <thead>
+        <tr>
+          <th>Blog Titel</th>
+          <th>Creation Date</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for b in entriesWithSlug %}
+          <tr>
+            <form>
+              <td>{{ b.title }} by {{ b.author }}</td>
+              <td>{{ b.createdAt }}</td>
+              <td>
+                <a href="/admin/delete/{{ b.slug }}" role="button">DELETE</a>
+              </td>
+            </form>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
   </div>
 {% endblock %}
