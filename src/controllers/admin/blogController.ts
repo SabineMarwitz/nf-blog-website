@@ -1,6 +1,7 @@
 import type { Request, Response } from "express";
 import { BlogEntries, BlogEntry } from "../../types/models";
 import { transformBlogEntriesData } from "../../utils/transformBlogData";
+import { isNumeric } from "../../utils/checkDataType";
 import {
   getAllBlogEntries,
   addBlogEntry,
@@ -19,9 +20,15 @@ export const entriesListing = async (req: Request, res: Response) => {
 };
 
 export const deleteBlog = async (req: Request, res: Response) => {
-  await deleteBlogEntry(req.params.id);
-  // admin view should list remaining blog entries
+  // delete should be done by id
+  if (isNumeric(req.params.id)) {
+    const id = parseInt(req.params.id);
+    await deleteBlogEntry(id);
+  } else {
+    console.log("ERROR: This can't be an ID: ", req.params.id);
+  }
 
+  // admin view should list remaining blog entries
   const blogEntries = await getAllBlogEntries();
   const entriesWithSlug = transformBlogEntriesData(blogEntries);
 
