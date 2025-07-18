@@ -26,17 +26,18 @@ export async function getAllBlogEntries(): Promise<BlogEntries> {
 export async function deleteBlogEntry(id: number) {
   const db = getDB();
 
-  const stmt = "DELETE from blog_entries where id = " + id;
-
   return new Promise((resolve, reject): void => {
-    console.log(stmt);
-    db.run(stmt, [], (error: Error | null) => {
-      if (error) {
-        reject(error);
-      } else {
-        resolve(true);
-      }
-    });
+    db.run(
+      "DELETE from blog_entries where id = ?",
+      [id],
+      (error: Error | null) => {
+        if (error) {
+          reject(error);
+        } else {
+          resolve(true);
+        }
+      },
+    );
   });
 }
 
