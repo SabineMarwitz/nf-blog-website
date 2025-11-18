@@ -1,4 +1,5 @@
-# Coding Challenge: Create a blog website
+# Coding Challenge: Create a blog website (using a template engine)
+This is a TypeScript Express Nunjucks Exercise from the AWD training (NF).
 
 ## Requirements
 
