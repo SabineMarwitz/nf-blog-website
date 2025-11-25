@@ -20,28 +20,31 @@ This is a TypeScript Express Nunjucks Exercise from the AWD training (NF).
 ## Material
 
 ### Blog entries
-[
-  {
-    "title": "Black: The Absence, Not the Presence, of Color",
-    "image": "colorful-umbrella.jpg",
-    "author": "Peter Parker",
-    "createdAt": 1743120000,
-    "teaser": "Scientifically, black is not a color but rather the absence of all colors, occurring when an object absorbs nearly all light wavelengths instead of reflecting them.",
-    "content": "<p>When you think about the rainbow, ...},
-  {
-    "title": "Flowers: Nature's Muse for Design",
-    "image": "flowers.jpg",
-    "author": "Peter Parker",
-    "createdAt": 1745452800,
-    "teaser": "Flowers endlessly inspire diverse design fields, from fashion to architecture, with their colors, patterns, forms, and functional structures, reminding us that nature is the ultimate muse for creativity.",
-    "content": "<p>Flowers, with their riot of colors, intricate patterns, ... },
-  {
-    "title": "UDesign's Harmony: Core Purpose and Supporting Details",
-    "image": "sailing.jpg",
-    "author": "Peter Parker",
-    "createdAt": 1748736000,
-    "teaser": "Discover how distinguishing between the major core and minor supporting details in design creates a harmonious and impactful final product.",
-    "content": "<p>In the world of design, ... }
+[  
+  {  
+    "title": "Black: The Absence, Not the Presence, of Color",  
+    "image": "colorful-umbrella.jpg",  
+    "author": "Peter Parker",  
+    "createdAt": 1743120000,  
+    "teaser": "Scientifically, black is not a color but rather the absence of all colors, occurring when an object absorbs nearly all light wavelengths instead of reflecting them.",  
+    "content": ``` "<p>When you think about the rainbow, ...</p>"```  
+  },  
+  {  
+    "title": "Flowers: Nature's Muse for Design",  
+    "image": "flowers.jpg",  
+    "author": "Peter Parker",  
+    "createdAt": 1745452800,  
+    "teaser": "Flowers endlessly inspire diverse design fields, from fashion to architecture, with their colors, patterns, forms, and functional structures, reminding us that nature is the ultimate muse for creativity.",  
+    "content": ```"<p>Flowers, with their riot of colors, intricate patterns, ...</p>"```  
+  },  
+  {  
+    "title": "UDesign's Harmony: Core Purpose and Supporting Details",  
+    "image": "sailing.jpg",  
+    "author": "Peter Parker",  
+    "createdAt": 1748736000,  
+    "teaser": "Discover how distinguishing between the major core and minor supporting details in design creates a harmonious and impactful final product.",  
+    "content": ```"<p>In the world of design, ...</p>"```  
+  }  
 ]
 
 ### Images
