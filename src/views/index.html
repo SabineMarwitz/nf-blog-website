@@ -6,13 +6,12 @@
   <!-- Page Header-->
   {{
     masthead.heading(
-    main="Clean Blog",
-    sub="A Blog Theme by Start Bootstrap",
-    picture="assets/img/home-bg.jpg"
+      main="Clean Blog",
+      sub="A Blog Theme by Start Bootstrap",
+      picture="assets/img/home-bg.jpg"
     )
   }}
 {% endblock %}
-
 {% block content %}
   <!-- Main Content-->
   <div class="container px-4 px-lg-5">
@@ -21,10 +20,12 @@
         {% for b in entriesWithSlug %}
           {{
             blog.post(
+              id=b.id,
               title=b.title,
               sub=b.teaser,
               author=b.author,
-              date=b.createdAt
+              date=b.createdAt,
+              slug=b.slug
             )
           }}
         {% endfor %}

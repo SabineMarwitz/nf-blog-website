@@ -1,14 +1,14 @@
 <!-- Post preview-->
-{% macro post(title="", sub="", author="", date="") %}
-<div class="post-preview">
-  <a href="post">
-    <h2 class="post-title">{{ title }}</h2>
-    <h3 class="post-subtitle">{{ sub }}</h3>
-  </a>
-  <p class="post-meta">
-    Posted by
-    <a href="#!">{{ author }}</a>
-    on {{ date }}
-  </p>
-</div>
+{% macro post(id="", title="", sub="", author="", date="", slug="") %}
+  <div class="post-preview">
+    <a href="posts/{{ slug }}">
+      <h2 class="post-title">{{ title }}</h2>
+      <h3 class="post-subtitle">{{ sub }}</h3>
+    </a>
+    <p class="post-meta">
+      Posted by
+      <a href="#!">{{ author }}</a>
+      on {{ date }}
+    </p>
+  </div>
 {% endmacro %}

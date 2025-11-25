@@ -21,6 +21,14 @@ export async function getAllBlogEntries(): Promise<BlogEntries> {
   }
 }
 
+// tbd: catch error
+export async function getBlogBySlug(slug: string) {
+  const allBlogs = await getAllBlogEntries();
+  const entriesWithSlug = transformBlogEntriesData(allBlogs);
+  const res = entriesWithSlug.filter((entry) => entry.slug == slug);
+  if (res.length > 0) return res[0];
+}
+
 // delete blog
 export async function deleteBlogEntry(title: string) {
   try {
